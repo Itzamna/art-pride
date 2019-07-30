@@ -1,0 +1,81 @@
+
+{% assign teacher = site.data.teachers[page.menu] %}
+<div class="container content-sm">
+  <div class="row">
+    <!-- Social Network -->
+    <div class="col-md-4 md-margin-bottom-50">
+      <div class="box-shadow shadow-effect-2">
+        <img class="img-responsive img-bordered" src="{{ site.url }}/assets/img/teachers/{{teacher.photo }}" alt="">
+      </div>
+    </div>
+    <!-- End Social Network -->
+
+    <!-- Progress Bar -->
+    <div class="col-md-8 progress-box md-margin-bottom-50">
+      <div class="headline-left margin-bottom-30">
+        <h2 class="headline-brd heading-md">{{teacher.name}}<br><small class="text-uppercase">{{teacher.subject}}</small></h2>
+      </div>
+      <h3 class="heading-xs">Педагогический стаж <span class="pull-right  text-uppercase">{{ teacher.standing }}</span></h3>
+      <div class="progress progress-u progress-xxs">
+        <div class="progress-bar progress-bar-dark" role="progressbar" data-width="76">
+        </div>
+      </div>      
+
+      <h3 class="heading-xs">Опыт подготовки к ЕГЭ <span class="pull-right  text-uppercase">{{ teacher.experience }}</span></h3>
+      <div class="progress progress-u progress-xxs">
+        <div class="progress-bar progress-bar-dark" role="progressbar" data-width="76">
+        </div>
+      </div>
+
+      <h3 class="heading-xs">Образование <span class="pull-right text-uppercase">{{ teacher.education }}</span></h3>
+      <div class="progress progress-u progress-xxs">
+        <div class="progress-bar progress-bar-dark" role="progressbar" data-width="100">
+        </div>
+      </div> 
+      <h3 class="heading-xs">Специальность <span class="pull-right text-uppercase">{{ teacher.specialty }}</span></h3>
+      <div class="progress progress-u progress-xxs">
+        <div class="progress-bar progress-bar-dark" role="progressbar" data-width="100">
+        </div>
+      </div>           
+      <h3 class="heading-xs">Ученики поступили в <span class="pull-right text-uppercase">{{ teacher.insts }}</span></h3>
+      <div class="progress progress-u progress-xxs">
+        <div class="progress-bar progress-bar-dark" role="progressbar" data-width="100">
+        </div>
+      </div>  
+    </div>
+    <!-- End Progress Bar -->
+  </div><!--/end row-->
+</div>
+<div class="heading heading-v1 margin-bottom-30">
+  <h2><span class="color-green">Отзывы</span> учеников</h2>
+</div>
+<div class="row margin-bottom-40">
+  <div class="col-md-12 ">
+    <div id="testimonials-8" class="carousel slide testimonials testimonials-v2">
+      <div class="carousel-inner">
+      {% for review in site.data.reviews %}
+      {% if review.teacher == page.menu %}       
+
+        <div class="item {{review.active-menu }}">
+          <p>{{ review.review }}</p>
+          <div class="testimonial-info">
+            <span class="testimonial-author">
+              {{ review.author-name }}
+              <em>{{ review.author-class }}</em>
+            </span>
+          </div>
+        </div>
+      {% endif %}      
+      {% endfor %}							
+      </div>
+      <div class="carousel-arrow">
+        <a class="left carousel-control" href="#testimonials-8" data-slide="prev">
+          <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="right carousel-control" href="#testimonials-8" data-slide="next">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

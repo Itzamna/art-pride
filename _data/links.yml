@@ -1,0 +1,26 @@
+- url: index
+  alt: Главная
+  
+- url: puppies
+  alt: Щенки
+  submenu:
+  - alt: Щенки выпускники
+    url: litters
+
+  - alt: Щенки на продажу
+    url: puppies-for-sale
+    
+  - alt: Щенок в доме
+    url: puppy-in-the-house
+
+- url: dogs
+  alt: Наши собаки
+
+- url: news
+  alt: Новости
+  
+- url: articles
+  alt: Статьи
+  
+- url: contacts
+  alt: Контакты

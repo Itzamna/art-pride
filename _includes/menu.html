@@ -1,0 +1,32 @@
+<div class="res-container">      
+  <ul class="nav navbar-nav ">
+      {% for link in site.data.links %}
+        {% if link.submenu  %}
+        <li class="dropdown">
+          <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">{{ link.alt }}</a> 
+          <ul class="dropdown-menu">
+            {% for sublink in link.submenu %}
+            
+            <li><a href="{{ site.url }}/{{ sublink.url }}.html"><i class="fa fa-check color-green"></i> {{ sublink.alt }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>       
+        {% else %}   
+        <li {% if page.menu == '{{ site.url }}/{{ link.alt }}' %} class='active' {% endif %} >
+          <a href="{{ site.url }}/{{ link.url }}.html"><i class="fa {{ link.ico }} icon-sm"></i>{{ link.alt }}</a>
+        </li>     
+        {% endif %}
+    
+      {% endfor %}
+   </ul> 
+
+
+   <div class="divider"></div>
+  <div class="translater pull-right">
+    <div id="google_translate_element"></div><script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ru', includedLanguages: 'de,en,es,fi,fr,it,no,sv', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+    </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>        
+  </div>
+</div>
