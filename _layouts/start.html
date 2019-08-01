@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="ru" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="ru" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="ru"> <!--<![endif]-->
+<head>
+  {% include head.html %}
+
+  <link rel="stylesheet" href="/assets/plugins/presentational-only/presentational-only.css">
+  <link rel="stylesheet" href="/assets/css/responsive-full-background-image.css">
+  
+</head>
+<style>
+
+  body {
+    background-image: url(/assets/img/bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: cover; 
+    //background-position: bottom;
+    //background-size: 100% auto;
+    background-color: #0f0f0f;
+    
+   
+}
+
+.hide-on-mobile 
+  { display: inline; }
+/* Smartphone Portrait and Landscape */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px)
+{ .hide-on-mobile 
+  { display: none; }
+  
+}  
+  
+  
+.message {
+    text-align:center;
+    font-family: Arial;
+    font-size: 1.4em;
+    color: #e5d091;
+    font-weight:600;
+    margin-top:250px;
+    line-height:2em
+}
+.message a {
+    color: #e5d091;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+}
+.message a:hover {
+    text-decoration:none;
+    color: #faecc2;
+}
+
+  </style>
+
+<body>
+  {{ content }}
+
+</body>
+</html>
